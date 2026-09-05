@@ -1,3 +1,4 @@
+ -*- coding: utf-8 -*-
 import asyncio
 import json
 import os
@@ -162,7 +163,7 @@ async def process_day(callback: types.CallbackQuery):
     if not schedule_data or day_name not in schedule_data:
         try:
             await callback.message.edit_text(
-                f"❄1�7 Расписание для группы {group_name} на {day_name} не найдено.",
+                f"❄1�7 Расписание для группы {group_name} на {day_name} не найдено.",
                 reply_markup=builder.as_markup()
             )
         except TelegramBadRequest:
@@ -192,7 +193,7 @@ async def process_day(callback: types.CallbackQuery):
         response_text += f"🕒 <b>{pair_name}</b> ({time_str})\n" \
                          f"📚 <b>{subject}</b>\n"
         if teacher:
-            response_text += f"👨‍🏄1�7 {teacher}\n"
+            response_text += f"👨‍🏄1�7 {teacher}\n"
         if auditory:
             response_text += f"🚪 ауд. {auditory}\n"
         response_text += "\n"
