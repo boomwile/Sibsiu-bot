@@ -219,11 +219,8 @@ def index():
 
 async def main():
     print("Бот запущен на Hugging Face!")
-    async def main():
-    # Удаляем старые вебхуки, чтобы бот не тупил
+async def main():
     await bot.delete_webhook(drop_pending_updates=True)
-    
-    # Запускаем бота с отключенными сигналами, чтобы не было ошибки
     await dp.start_polling(bot, handle_signals=False)
 
 def run_bot_in_thread():
