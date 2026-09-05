@@ -218,8 +218,6 @@ def index():
     return {"status": "Bot is running 24/7!"}
 
 async def main():
-    print("Бот запущен на Hugging Face!")
-async def main():
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot, handle_signals=False)
 
