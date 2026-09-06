@@ -193,7 +193,7 @@ async def process_day(callback: types.CallbackQuery):
         response_text += f"🕒 <b>{pair_name}</b> ({time_str})\n" \
                          f"📚 <b>{subject}</b>\n"
         if teacher:
-            response_text += f"👨‍🏄1�7 {teacher}\n"
+            response_text += f"👨‍🏫 {teacher}\n"
         if auditory:
             response_text += f"🚪 ауд. {auditory}\n"
         response_text += "\n"
