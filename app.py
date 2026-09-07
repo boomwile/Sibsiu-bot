@@ -31,12 +31,18 @@ main_kb = ReplyKeyboardMarkup(
 
 def get_week_parity():
     now = datetime.now()
+
     year = now.year if now.month >= 9 else now.year - 1
     sept_1 = datetime(year, 9, 1)
-    delta_days = (now - sept_1).days
-    week_number = (delta_days // 7) + 1
-    return "четная" if week_number % 2 == 0 else "нечетная"
 
+    # Находим понедельник недели, в которую попадает 1 сентября
+    first_monday = sept_1 - timedelta(days=sept_1.weekday())
+
+    # Считаем количество полных недель от этого понедельника
+    week_number = ((now - first_monday).days // 7) + 1
+
+    return "четная" if week_number % 2 == 0 else "нечетная"
+    
 @dp.message(Command("start"))
 async def cmd_start(message: types.Message):
     await message.answer("Привет! Выбери нужный раздел в меню:", reply_markup=main_kb)
