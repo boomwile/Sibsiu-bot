@@ -48,7 +48,7 @@ def is_online_course(subject: str) -> bool:
 # =========================
 # НАСТРОЙКИ
 # =========================
-TOKEN = os.getenv("BOT_TOKЕN")
+TOKEN = os.getenv("BOT_TOKEN")
 if not TOKEN:
     raise RuntimeError("Не задана переменная окружения BOT_TOKEN")
 
